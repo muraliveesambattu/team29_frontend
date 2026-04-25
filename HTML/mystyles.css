@@ -1,0 +1,13 @@
+ #main {
+     height: 300px;
+     background: gray;
+     width: 50%;
+ }
+
+ h2 {
+     background: red;
+ }
+
+ p {
+     background: green;
+ }
