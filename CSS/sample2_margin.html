@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main {
+            height: 300px;
+            background: red;
+            border: 5px solid blue;
+        }
+
+        #child {
+            width: 200px;
+            height: 200px;
+            background: white;
+            /* margin: 10px;  If you give single property it apply all 4 sides */
+            /* margin: 10px 20px;If you give 2 properties , First propery will apply for Top And Bottom , 2nd Property will apply for Left & RIght  */
+            /*  margin: 10px 20px 30px;  If you give 3  properties , First Property will Apply to the Top , 2nd Property will apply to Left & Right , Third Property will aplly to the bottom */
+            /* margin: 10px 20px 30px 40px; */
+            /* padding: 10px; */
+            /* padding: 10px 20px; */
+            /* padding: 10px 20px 30px; */
+            /* padding: 10px 20px 30px 40px; */
+            /* margin: 10px auto; 10px for Top & Bottom , Balance width devided in to 2 parts and assigned left & Right  */
+            /* margin: auto 10px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="child"></div>
+    </div>
+</body>
+
+</html>
