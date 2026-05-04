@@ -1,7 +1,83 @@
+/* Global Selector - Selects all Elements in the Documet  */
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 13px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #919191;
+    background-color: #232323;
+}
 div.wrapper {
     display: block;
     width: 100%;
     margin: 0;
     padding: 0;
     text-align: left;
+}
+
+.row1,
+.row1 a {
+    color: #C0BAB6;
+    background-color: #333333;
+}
+
+#header {
+    padding: 20px 0;
+    overflow: auto;
+}
+
+#header,#container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#header #hgroup {
+    float: left;
+    margin: 0 0 20px 0;
+}
+#header #hgroup h1 {
+    font-size: 36px;
+}
+#header #hgroup h1, #header #hgroup h2 {
+    font-weight: normal;
+    text-transform: none;
+}
+a {
+    outline: none;
+    text-decoration: none;
+}
+#header #hgroup h2 {
+    font-size: 13px;
+}
+#header nav {
+    float: right;
+    margin: 10px 0 0 0;
+    padding: 20px 0;
+    color: #C0BAB6;
+    background-color: #232323;
+}
+#header nav ul {
+    padding: 0 20px;
+    list-style: none;
+}
+#header nav ul li {
+    display: inline;
+    margin-right: 25px;
+    text-transform: uppercase;
+}
+#header nav li a {
+    color: #C0BAB6;
+    background-color: #232323;
+}
+#header nav .last {
+    margin-right: 0;
+}
+.row2 {
+    color: #979797;
+    background-color: #FFFFFF;
+}
+#container{
+    padding: 30px 0;
 }
