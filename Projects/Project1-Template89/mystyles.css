@@ -3,12 +3,31 @@
     margin: 0;
     padding: 0;
 }
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    line-height: normal;
+    text-transform: uppercase;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
 body {
     font-size: 13px;
     font-family: Georgia, "Times New Roman", Times, serif;
     color: #919191;
     background-color: #232323;
 }
+
 div.wrapper {
     display: block;
     width: 100%;
@@ -28,7 +47,8 @@ div.wrapper {
     overflow: auto;
 }
 
-#header,#container {
+#header,
+#container {
     width: 960px;
     margin: 0 auto;
 }
@@ -37,20 +57,26 @@ div.wrapper {
     float: left;
     margin: 0 0 20px 0;
 }
+
 #header #hgroup h1 {
     font-size: 36px;
 }
-#header #hgroup h1, #header #hgroup h2 {
+
+#header #hgroup h1,
+#header #hgroup h2 {
     font-weight: normal;
     text-transform: none;
 }
+
 a {
     outline: none;
     text-decoration: none;
 }
+
 #header #hgroup h2 {
     font-size: 13px;
 }
+
 #header nav {
     float: right;
     margin: 10px 0 0 0;
@@ -58,26 +84,146 @@ a {
     color: #C0BAB6;
     background-color: #232323;
 }
+
 #header nav ul {
     padding: 0 20px;
     list-style: none;
 }
+
 #header nav ul li {
     display: inline;
     margin-right: 25px;
     text-transform: uppercase;
 }
+
 #header nav li a {
     color: #C0BAB6;
     background-color: #232323;
 }
+
 #header nav .last {
     margin-right: 0;
 }
+
 .row2 {
     color: #979797;
     background-color: #FFFFFF;
 }
-#container{
+
+#container {
     padding: 30px 0;
+    overflow: auto;
+}
+
+#container #homepage #services {
+    padding: 0 0 30px 0;
+    border-bottom: 1px solid #DEDEDE;
+}
+
+#container section {
+    margin: 0 0 30px 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.one_quarter {
+    width: 225px;
+}
+
+.one_quarter {
+    float: left;
+    margin: 0 20px 0 0;
+}
+
+#container #homepage #services figure {
+    display: inline;
+    float: left;
+}
+
+#container #homepage #services strong {
+    float: left;
+    margin: 8px 0 0 10px;
+    padding: 0;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#container #homepage #services p {
+    padding: 5px 0 0 0;
+    clear: both;
+    line-height: 1.6em;
+}
+#container .more {
+    text-align: right;
+}
+.row2 a {
+    color: #FF9900;
+    background-color: #FFFFFF;
+}
+#services .last ,#latest .last {
+    margin-right: 0;
+}
+#latest article figure ul {
+    list-style: none;
+    overflow: auto;
+}
+
+.one_third {
+    width: 300px;
+}
+.one_third, .two_third, .three_third {
+    float: left;
+    margin: 0 30px 0 0;
+}
+#latest img {
+    padding: 4px ;
+    border: 1px solid #D6D6D6;
+} 
+#container #homepage #latest {
+    padding: 0 0 30px 0;
+    border-bottom: 1px solid #DEDEDE;
+}
+#latest article figure figcaption {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    text-align: right;
+    clear: both;
+}
+#container #content {
+    float: left;
+    width: 630px;
+    line-height: 1.6em;
+}
+#container #content #posts ul {
+    list-style: none;
+}
+#container #content #posts ul li {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+    overflow: auto;
+}
+address, article, aside, figcaption, figure, footer, header, nav, section {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+#container #content #posts ul li article figure img {
+    float: left;
+    width: 180px;
+    height: 150px;
+    margin: 0;
+    padding: 4px;
+    border: 1px solid #D6D6D6;
+}
+#posts ul li article figure figcaption {
+    float: right;
+    width: 410px;
+}
+#container #content #posts ul li article figure h2 {
+    font-size: 14px;
+}
+#container .more {
+    text-align: right;
 }
