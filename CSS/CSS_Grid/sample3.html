@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .container {
+            background-color: dodgerblue;
+            padding: 5px;
+            height: 400px;
+            display: grid;
+            gap: 10px;
+            grid-template-columns: auto auto auto;
+            /* justify-content: left; */
+            /* justify-content: center; */
+            /* justify-content: right; */
+            /* justify-content: space-evenly; */
+            /* justify-content: space-around; */
+            /* justify-content: space-between; */
+            /* align-items: center; */
+            /* align-items: start; */
+            /* align-items: end;  */
+            /* align-content: center;
+            align-content: start;
+            align-content: end; */
+            /* align-content: space-around; */
+            /* align-content: space-between; */
+            /* align-content: space-evenly; */
+            /* align-content: ;
+            justify-content: ; */
+            place-content: center center;
+
+        }
+
+        .container div {
+            background-color: #f1f1f1;
+            color: #000;
+            padding: 10px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>justify-content: space-evenly</h1>
+
+    <p>Use the <em>justify-content</em> property to align the grid items inside the container.</p>
+
+    <p>The value "space-evenly" displays the grid items with equal space around them:</p>
+
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+</body>
+
+</html>

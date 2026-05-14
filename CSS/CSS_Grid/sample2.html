@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .container {
+            background-color: dodgerblue;
+            padding: 5px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 80px 120px 200px;
+            /* column-gap: 5px;
+            row-gap: 10px; */
+            gap: 5px;
+        }
+
+        .container div {
+            background-color: #f1f1f1;
+            color: #000;
+            padding: 10px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>The grid-template-rows Property</h1>
+
+    <p>Use the <em>grid-template-rows</em> property to specify the size (height) of each row.</p>
+
+    <p>Notice that the first row in this grid is 80px high and the second row is 200px high. The next rows will use auto
+        as default:</p>
+
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+
+</body>
+
+</html>
