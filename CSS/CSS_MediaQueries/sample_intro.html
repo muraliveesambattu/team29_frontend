@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* RWD - Responsive Web Development  */
+        /* Device Break Points 
+        1.320px 
+        2.375px
+        3.425px
+        4.768px
+        5.1024px
+        6.1440px
+        7.2560px  */
+        /* @media condition{
+
+        } */
+        #size320,
+        #size375 {
+            display: none;
+        }
+
+        /* img {
+            display: none;
+        } */
+        img {
+            visibility: hidden;
+        }
+
+        @media screen and (max-width:320px) {
+            body {
+                background-color: red;
+            }
+
+            #size320 {
+                display: block;
+            }
+        }
+
+        @media screen and (min-width:321px) and (max-width:375px) {
+            body {
+                background-color: blue;
+            }
+
+            #size375 {
+                display: block;
+
+            }
+
+            h2 {
+                color: white;
+            }
+        }
+
+        @media screen and (min-width:376px) and (max-width:425px) {
+            body {
+                background-color: blueviolet;
+            }
+
+        }
+
+        @media screen and (min-width:768px) and (max-width:1024px) {
+
+            /* img {
+                display: block;
+            } */
+            img {
+                visibility: visible;
+            }
+        }
+        /* Display none will hide the element , and it wont occupy the space . */
+    </style>
+</head>
+
+<body>
+    <img src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8="
+        alt="">
+    <div>
+        <h2>Hello WELCOME to RWD development !!!!</h2>
+        <h2 id="size320">My Current Window size is 320px !!!</h2>
+        <h2 id="size375">My Current Window size is 320px !!!</h2>
+    </div>
+</body>
+
+</html>
