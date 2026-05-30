@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main {
+            height: 400px;
+            background-color: red;
+            top: 50px;
+            position: relative;
+        }
+
+        #child {
+            height: 150px;
+            width: 400px;
+            background-color: blue;
+            position: absolute;
+            top: 100px;
+            left: 200px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, facilis culpa reprehenderit voluptatum nostrum,
+        autem eos quasi optio consequuntur, voluptatem quidem. Laborum, dolore placeat tempora dignissimos numquam illum
+        quam tenetur!</p>
+    <p>Voluptas magni at voluptatum consequuntur laboriosam! Ullam veniam sit eius delectus, accusantium veritatis
+        dolorum, temporibus consequatur porro sequi dolorem illo dolore quis, illum rem incidunt quos odio sunt
+        doloribus possimus?</p>
+    <p>Aliquam dolorem eligendi laudantium ullam ipsum alias assumenda, suscipit facere odit! Fuga sit iste quaerat
+        nobis saepe sapiente eligendi dignissimos optio modi. Alias quasi, placeat modi doloribus neque repudiandae
+        ipsa.</p>
+    <p>Optio earum ratione dolorum! Voluptates atque error officiis a? Ullam officiis iste voluptatum debitis et,
+        distinctio, consectetur laborum dolorum suscipit libero non nisi alias temporibus maxime sapiente ad.
+        Repudiandae, vel!</p>
+    <p>Quibusdam, consequatur facilis deserunt, aliquam error numquam enim omnis sapiente nobis recusandae facere
+        ratione autem natus? Consequuntur illum mollitia obcaecati accusamus id quasi doloribus minima vero ab. Fugit,
+        illo laboriosam.</p>
+    <div id="main">
+        <div id="child"></div>
+        <h2>Welcome to Positions topic in CSS !! , Welcome to Positions topic in CSS</h2>
+        <button onclick="showModal()">Click</button>
+    </div>
+    <p>Provident quos doloribus nemo fugit praesentium minima, esse voluptates accusamus ipsum odio rerum illo maxime
+        quas reiciendis itaque quo necessitatibus minus mollitia ad aliquam. Rem quidem cum dolor vero odio?</p>
+    <p>Nam nostrum neque, magnam placeat provident quas doloribus repellendus eligendi cum dolorum aperiam quasi
+        excepturi vel dicta quibusdam aut sit tempore consectetur doloremque accusamus. Ratione perspiciatis dignissimos
+        maiores tempora animi?</p>
+    <p>Aliquid cupiditate nihil optio architecto! Aliquam laudantium rem assumenda ullam. Consectetur, enim, hic dicta
+        quisquam veniam delectus quia nostrum animi, iusto aspernatur esse tempore accusantium laudantium velit omnis
+        assumenda molestias!</p>
+    <p>Eum porro, harum voluptatum alias vero delectus rem beatae illum. Autem cum minima eos dolores officia
+        dignissimos, ullam delectus laudantium labore quaerat vero iste quam sed expedita dolore non ea.</p>
+    <p>Maxime nihil, neque repellendus consequuntur quibusdam, et laudantium fugiat, iure facere ad magnam similique
+        quisquam illum ducimus! Consequatur ut ipsum sequi temporibus! Provident iste maiores, debitis exercitationem
+        laudantium temporibus ipsum.</p>
+    <script>
+        function showModal() {
+            var boxStyle = document.querySelector("#child").style.display
+            console.log(boxStyle);
+            if (boxStyle == "" || boxStyle == "none" ) {
+                document.querySelector("#child").style.display = "block"
+                return
+            } else {
+                document.querySelector("#child").style.display = "none"
+            }
+        }
+    </script>
+</body>
+
+</html>

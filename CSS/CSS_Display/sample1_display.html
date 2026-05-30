@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background: red;
+            visibility: hidden;
+            /* display: none; */
+            /* display: none; WIll Hide the Element and Remove the space */
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="showBox()">Show Box</button>
+    <div class="box">
+
+    </div>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores dolores, minima iste adipisci illum,
+        reiciendis atque repellendus dolorem omnis natus aliquid? Id adipisci a fugit consequatur minus ad amet
+        possimus?</p>
+    <script>
+        function showBox(){
+            // document.querySelector(".box").style.display = "block"
+            document.querySelector(".box").style.visibility = "visible"
+        }
+    </script>
+</body>
+
+</html>
