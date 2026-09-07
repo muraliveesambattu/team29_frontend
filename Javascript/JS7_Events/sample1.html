@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button 
+    
+    onclick="changeDocumentBackground()" 
+    ondblclick="revertBackGround()">Click Me</button>
+    <select name="" id="">
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+        <option value="">4</option>
+    </select>
+    <input type="text" name="" id="myInput" onmouseover="changeInputFieldColor()" onmouseout="resetInputFieldColor()"
+        onfocus="changeColorOnFocus()" onblur="resetFornColorOnBlur()" onchange="handleChangeEvent()"
+        onkeyup="handleKeuUp()">
+    <p style="color: red;" id="validation">Please enter minimum 6 Characters</p>
+
+
+    <script>
+        function revertBackGround(){
+            document.body.style.background = ""
+        }
+        function changeDocumentBackground(){
+            document.body.style.background = "lightblue"
+        }
+        function handleKeuUp() {
+            console.log("handleKeuUp happened !!!");
+            var enteredValue = document.getElementById("myInput").value
+            console.log(enteredValue);
+            if (enteredValue.length >= 6) {
+                document.getElementById("validation").style.display = "none"
+
+            } else {
+                document.getElementById("validation").style.display = "block"
+
+            }
+        }
+        function handleChangeEvent() {
+            console.log("handleChangeEvent happened !!!");
+
+        }
+        function changeInputFieldColor() {
+            document.getElementById("myInput").style.background = "lightgray"
+        }
+        function resetInputFieldColor() {
+            document.getElementById("myInput").style.background = ""
+        }
+        function changeColorOnFocus() {
+            document.getElementById("myInput").style.background = "lightblue"
+            document.getElementById("myInput").style.color = "red";
+            document.getElementById("validation").style.display = "block"
+        }
+        function resetFornColorOnBlur() {
+            document.getElementById("myInput").style.color = ""
+        }
+    </script>
+</body>
+
+</html>

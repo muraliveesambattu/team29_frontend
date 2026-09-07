@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            margin: 2px;
+            width: 400px;
+        }
+    </style>
+    <script></script>
+</head>
+<body>
+    <!-- <h2>Welcome to Javascript Intro !!!</h2>
+    <img src="../../CSS/290x180.gif" alt="" srcset="" onclick="changeHeadingContent()">
+    <button onclick="changeImageAttribute()">Change Image</button> -->
+
+    <input type="text" name="" id=""> <button>Add Me</button>
+  <!-- 1. Javascript Can be added to HTML Document In Head Section or Body Section 
+    2.Javascript Can be added as External Script.js file 
+    Why do we Need Javascript
+    
+    -->
+    <script>
+
+        function changeImageAttribute(){
+            document.querySelector("img").setAttribute("src","../../HTML/beautiful-fall-nature-scenery-free-image.jpeg")
+            document.querySelector("img").style.width="500px";
+            document.querySelector("img").style.border="2px solid red";
+            
+        }
+        function changeHeadingContent(){
+            document.querySelector("h2").innerHTML ="Welcome to Front End Development !!!!"
+        }
+        for(i=0;i<100;i++){
+            // var myImage = document.createElement("img");
+            // myImage.setAttribute("src","../../CSS/290x180.gif")
+            // document.body.appendChild(myImage);
+            var myPara = document.createElement("p")
+            myPara.innerHTML = i+" Info ";
+            document.body.appendChild(myPara);
+        }
+    </script>
+</body>
+</html>

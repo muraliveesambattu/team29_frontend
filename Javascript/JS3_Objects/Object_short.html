@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var fullName = "Nisar Ahmad";
+
+        var student = {
+            fullName,
+            city: "Kurnool"
+        }
+
+
+        var { city } = student // With Destructuring you can extract a property from an Object 
+
+        console.log(city);
+        console.log(student.hasOwnProperty("city"));
+    </script>
+</body>
+
+</html>

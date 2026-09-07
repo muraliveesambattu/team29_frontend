@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var student1 = {
+        //     course: "Front End",
+        //     city: "karnool",
+        //     address :"Gandi Nagar"
+        // }
+
+        // var student2 = student1;
+
+        // student2.city = "Hyderabad";
+
+        // console.log(student1);
+        // console.log(student2);
+
+
+        // function Student(course,city,address){
+        // this.course = course;
+        // this.city = city;
+        // this.address = address;
+        // }
+
+        class Student {
+            constructor(course, city, address) {
+                this.course = course;
+                this.city = city;
+                this.address = address;
+            }
+        }
+        var student1 = new Student("java", "Bangalore", "Whitefield");
+        var student2 = new Student("Python", "Chennai", "MGR Street");
+
+        student1.address = "KLM Street";
+
+        console.log(student1);
+        console.log(student2);
+    </script>
+</body>
+
+</html>

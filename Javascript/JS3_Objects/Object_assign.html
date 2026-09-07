@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var course = Object.freeze({
+            name: "Front End",
+            duration: "4 Months"
+        })
+
+        delete course.duration
+        console.log(course);
+        // var studentDetails = course ;
+        // course.duration = "6 Months"
+
+        // var studentDetails = { ...Object.assign(course) };
+        // course.duration = "6 Months"
+        // console.log(studentDetails);
+    </script>
+</body>
+
+</html>

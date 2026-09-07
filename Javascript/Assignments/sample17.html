@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var students = [
+            {
+                name: "Arun",
+                marks: [80, 75, 90, 85, 99]
+            },
+            {
+                name: "Priya",
+                marks: [60, 70, 65, 72, 96]
+            }
+        ]
+
+        function calculateAverage() {
+            // students.forEach((student) => {
+
+            // var totalMarks = student.marks.reduce((a, b) => {
+            //     return a + b
+            // })
+            // student.average = totalMarks/student.marks.length;
+            //     console.log(student);
+            // })
+            for (a of students) {
+                var totalMarks = a.marks.reduce((a, b) => {
+                    return a + b
+                })
+                a.average = totalMarks / a.marks.length;
+            }
+        }
+
+        // function findHighestMark() {
+        //     for (a of students) {
+
+        //         var highestMark = null;
+        //         a.marks.forEach(function (mark, i) {
+        //             if (highestMark == null) {
+        //                 if (a.marks[i] > a.marks[i + 1]) {
+        //                     highestMark = a.marks[i]
+        //                 } else {
+        //                     highestMark = a.marks[i + 1]
+        //                 }
+        //             } else {
+        //                 if (a.marks[i] > highestMark) {
+        //                     highestMark = a.marks[i]
+        //                 }
+        //             }
+
+        //         })
+        //         a.highestMark = highestMark;
+        //         console.log(a);
+        //     }
+        // }
+
+        function findHighestMark() {
+            for (a of students) {
+                var highest = a.marks.reduce(function (a, b) {
+                    if (a > b) {
+                        return a
+                    } else {
+                        return b
+                    }
+                })
+                a.highestMark = highest;
+                console.log(a);
+
+            }
+        }
+        calculateAverage(students);
+        findHighestMark()
+    </script>
+</body>
+
+</html>

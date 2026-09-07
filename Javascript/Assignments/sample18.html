@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var cart = {
+            customer: {
+                name: "Murali",
+                city: "Bangalore"
+            },
+            items: [
+                { name: "Laptop", price: 60000, quantity: 1 },
+                { name: "Mouse", price: 1500, quantity: 2 }
+            ],
+            paymentMethod: "UPI"
+        }
+
+        var total = 0;
+        function calculateSubtotal() {
+            cart.items.forEach(function (item) {
+                console.log(item);
+                total += (item.price * item.quantity)
+            })
+            cart.total = total;
+            var discountAmount = cart.total * 0.1
+            cart.total -= discountAmount;
+            cart.tax = cart.total * .15
+            console.log(cart);
+            cart.paybleAmount = cart.total + cart.tax
+        }
+        calculateSubtotal()
+    </script>
+</body>
+
+</html>
