@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini E-Commerce Application 🛍 (ES6+ Edition)</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Shared Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= 1. ANNOUNCEMENT / PROMO BANNER ================= -->
+    <div class="announcement-bar text-center">
+        <span>🎉 Special Offer: Use code <span class="promo-pill">SAVE10</span> for 10% OFF or <span class="promo-pill">FLAT20</span> for $20 OFF orders over $50! Free shipping on orders over $50.</span>
+    </div>
+
+    <!-- ================= 2. NAVBAR / HEADER ================= -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="brand-logo" href="#">
+                <span>🛍️</span>
+                <span>ShopSphere</span>
+                <span class="brand-badge bg-success-subtle text-success">ES6+ Edition</span>
+            </a>
+
+            <!-- Version Switcher & Cart Trigger Button -->
+            <div class="d-flex align-items-center gap-2 ms-auto">
+                <a href="../ES5/index.html" class="btn btn-sm btn-outline-secondary d-none d-sm-inline-flex align-items-center gap-1" title="View ES5 Version">
+                    <span>🔄</span>
+                    <span>ES5 Version</span>
+                </a>
+
+                <button class="btn btn-outline-primary cart-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas">
+                    <span>🛒</span>
+                    <span class="d-none d-sm-inline">Cart</span>
+                    <span class="cart-badge-count cart-count-badge">0</span>
+                    <span class="fw-bold text-primary cart-total-preview d-none d-md-inline">$0.00</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= 3. MAIN CONTENT CONTAINER ================= -->
+    <main class="container py-4 flex-grow-1">
+
+        <!-- Header Title Section -->
+        <div class="text-center mb-4">
+            <h1 class="fw-bold mb-2 text-dark">Mini E-Commerce Store</h1>
+            <p class="text-muted">A modern shopping application built with <strong>ES6+ Classes, Arrow Functions, Template Literals, Destructuring & Sets</strong>.</p>
+            <div class="d-flex justify-content-center flex-wrap gap-2 mt-2">
+                <span class="badge bg-primary-subtle text-primary border border-primary-subtle">ES6 Classes</span>
+                <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Arrow Functions (=>)</span>
+                <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Template Literals (`...`)</span>
+                <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Object Destructuring</span>
+                <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Spread Operator (...)</span>
+                <span class="badge bg-primary-subtle text-primary border border-primary-subtle">new Set()</span>
+            </div>
+        </div>
+
+        <!-- ================= 4. SEARCH, FILTER & SORT PANEL ================= -->
+        <section class="filter-card">
+            <div class="row g-3 align-items-end">
+
+                <!-- Live Search Bar -->
+                <div class="col-12 col-md-4">
+                    <label for="searchInput" class="filter-label">Search Products</label>
+                    <div class="search-input-group">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="searchInput" class="form-control search-input" placeholder="Search by name, category, or keyword..." autocomplete="off">
+                        <button type="button" id="clearSearchBtn" class="clear-search-btn" title="Clear search">&times;</button>
+                    </div>
+                </div>
+
+                <!-- Category Filter (Populated dynamically via ES6 Set) -->
+                <div class="col-6 col-md-3">
+                    <label for="categoryFilter" class="filter-label">Category</label>
+                    <select id="categoryFilter" class="form-select form-select-custom">
+                        <!-- Injected dynamically via new Set() in app-es6.js -->
+                    </select>
+                </div>
+
+                <!-- Price Range Filter Slider -->
+                <div class="col-6 col-md-3">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <label for="priceFilter" class="filter-label mb-0">Max Price</label>
+                        <span id="priceDisplay" class="price-display">$150</span>
+                    </div>
+                    <div class="price-range-container">
+                        <input type="range" class="form-range price-range-slider" id="priceFilter" min="10" max="150" step="5" value="150">
+                    </div>
+                </div>
+
+                <!-- Sort Options & Reset Button -->
+                <div class="col-12 col-md-2 d-flex gap-2">
+                    <div class="flex-grow-1">
+                        <label for="sortSelect" class="filter-label">Sort By</label>
+                        <select id="sortSelect" class="form-select form-select-custom">
+                            <option value="default">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Highest Rated</option>
+                            <option value="name-asc">Name: A to Z</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="filter-label text-transparent d-none d-md-block">&nbsp;</label>
+                        <button id="resetFiltersBtn" class="btn btn-outline-secondary reset-filter-btn" title="Reset all filters">
+                            <span>↺</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= 5. RESULTS SUMMARY BAR ================= -->
+        <div class="results-summary-bar">
+            <div id="productCount" class="results-count">
+                Showing <strong>0</strong> of <strong>0</strong> products
+            </div>
+            <div class="text-muted small">
+                <span>⚡ Powered by ES6 <code>class StoreApp</code> &bull; Click <strong>Add to Cart</strong> to begin</span>
+            </div>
+        </div>
+
+        <!-- ================= 6. PRODUCT CATALOG GRID ================= -->
+        <section id="productGrid" class="product-grid">
+            <!-- Product Cards injected dynamically via Array.prototype.map() & Template Literals -->
+        </section>
+
+    </main>
+
+    <!-- ================= 7. OFFCANVAS SHOPPING CART DRAWER ================= -->
+    <div class="offcanvas offcanvas-end cart-offcanvas" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+        <!-- Offcanvas Header -->
+        <div class="offcanvas-header border-bottom py-3">
+            <h5 class="offcanvas-title fw-bold d-flex align-items-center gap-2" id="cartOffcanvasLabel">
+                <span>🛒</span>
+                <span>Your Cart (<span class="cart-count-badge">0</span>)</span>
+            </h5>
+            <div class="d-flex align-items-center gap-2">
+                <button type="button" id="clearCartBtn" class="btn btn-sm btn-outline-danger" title="Clear all items in cart">
+                    Clear Cart
+                </button>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+        </div>
+
+        <!-- Offcanvas Body -->
+        <div class="offcanvas-body d-flex flex-direction-column flex-column p-3">
+
+            <!-- Empty Cart Placeholder -->
+            <div id="cartEmptyView" class="empty-state my-auto">
+                <div class="empty-state-icon">🛒</div>
+                <h5 class="empty-state-title">Your Cart is Empty</h5>
+                <p class="empty-state-desc">Looks like you haven't added anything yet. Explore our catalog and discover amazing items!</p>
+                <button class="btn btn-primary px-4 py-2" data-bs-dismiss="offcanvas" style="border-radius: 8px; font-weight: 600;">
+                    Start Shopping
+                </button>
+            </div>
+
+            <!-- Filled Cart Container -->
+            <div id="cartFilledView" style="display: none;" class="d-flex flex-column h-100">
+                <!-- Cart Items Scrollable List -->
+                <div id="cartItemsContainer" class="flex-grow-1 overflow-y-auto mb-3 pe-1">
+                    <!-- Items rendered dynamically via class Cart & Template Literals -->
+                </div>
+
+                <!-- Cart Summary & Calculation Section -->
+                <div class="cart-summary-box mt-auto">
+
+                    <!-- Promo Code Input Group -->
+                    <div class="promo-input-group">
+                        <label for="promoInput" class="form-label small fw-bold text-muted mb-1">Have a discount coupon?</label>
+                        <div class="input-group">
+                            <input type="text" id="promoInput" class="form-control" placeholder="e.g. SAVE10 or FLAT20" style="text-transform: uppercase;">
+                            <button id="applyPromoBtn" class="btn btn-outline-primary fw-semibold" type="button">Apply</button>
+                        </div>
+                    </div>
+
+                    <!-- Promo Code Hints -->
+                    <div class="promo-suggestions">
+                        Try:
+                        <span class="promo-code-clickable" data-code="SAVE10">SAVE10</span> (10% off) &bull;
+                        <span class="promo-code-clickable" data-code="FLAT20">FLAT20</span> ($20 off >$50) &bull;
+                        <span class="promo-code-clickable" data-code="SUPER30">SUPER30</span> (30% off)
+                    </div>
+
+                    <!-- Active Promo Banner -->
+                    <div id="appliedPromoBox" class="applied-promo-tag" style="display: none;">
+                        <div>
+                            <span>🏷️ Applied: </span>
+                            <span id="promoTagText">SAVE10</span>
+                        </div>
+                        <button type="button" id="removePromoBtn" class="btn btn-sm btn-link text-danger p-0 text-decoration-none fw-bold" title="Remove promo">&times; Remove</button>
+                    </div>
+
+                    <!-- Price Breakdown Table -->
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="cartSubtotal" class="font-monospace fw-semibold">$0.00</span>
+                    </div>
+
+                    <div class="summary-row text-success" id="cartDiscountRow" style="display: none;">
+                        <span>Discount</span>
+                        <span id="cartDiscount" class="font-monospace fw-semibold">-$0.00</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span id="cartShipping" class="font-monospace fw-semibold">$0.00</span>
+                    </div>
+
+                    <div class="summary-row total-row">
+                        <span>Total</span>
+                        <span id="cartGrandTotal" class="font-monospace text-primary">$0.00</span>
+                    </div>
+
+                    <!-- Checkout Button -->
+                    <button id="proceedCheckoutBtn" class="btn btn-primary w-100 py-3 mt-3 fw-bold" style="border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#checkoutModal">
+                        Proceed to Checkout ➔
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= 8. CHECKOUT FORM MODAL ================= -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 16px; overflow: hidden;">
+
+                <!-- Modal Header -->
+                <div class="modal-header checkout-modal-header">
+                    <div>
+                        <h5 class="modal-title fw-bold" id="checkoutModalLabel">🛍️ Complete Your Order</h5>
+                        <p class="mb-0 small text-white-50">Please fill in your shipping and payment details to checkout.</p>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal Body Form -->
+                <div class="modal-body p-4">
+
+                    <!-- Mini Cart Review Box -->
+                    <div class="checkout-summary-mini d-flex justify-content-between align-items-center">
+                        <div>
+                            <span class="text-muted">Cart Summary:</span>
+                            <strong id="checkoutSummaryCount" class="ms-1 text-dark">0 items</strong>
+                        </div>
+                        <div>
+                            <span class="text-muted">Total Amount:</span>
+                            <strong id="checkoutSummaryTotal" class="ms-1 fs-5 text-primary">$0.00</strong>
+                        </div>
+                    </div>
+
+                    <!-- Checkout Validation Form -->
+                    <form id="checkoutForm" novalidate>
+                        <h6 class="fw-bold text-dark mb-3 border-bottom pb-2">1. Customer & Shipping Information</h6>
+
+                        <div class="row g-3 mb-4">
+                            <!-- Full Name -->
+                            <div class="col-12 col-md-6">
+                                <label for="fullName" class="form-label">Full Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="fullName" name="fullName" placeholder="John Doe" required>
+                                <div class="invalid-feedback">Please enter your full name (minimum 3 letters).</div>
+                            </div>
+
+                            <!-- Email Address -->
+                            <div class="col-12 col-md-6">
+                                <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="john@example.com" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+
+                            <!-- Phone Number -->
+                            <div class="col-12 col-md-6">
+                                <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="10-digit number" required>
+                                <div class="invalid-feedback">Please enter a valid 10-digit phone number.</div>
+                            </div>
+
+                            <!-- Street Address -->
+                            <div class="col-12 col-md-6">
+                                <label for="address" class="form-label">Street Address <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="address" name="address" placeholder="123 Main St, Apt 4B" required>
+                                <div class="invalid-feedback">Please provide your complete shipping address.</div>
+                            </div>
+
+                            <!-- City -->
+                            <div class="col-12 col-md-6">
+                                <label for="city" class="form-label">City <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="city" name="city" placeholder="New York" required>
+                                <div class="invalid-feedback">City is required.</div>
+                            </div>
+
+                            <!-- Zip Code -->
+                            <div class="col-12 col-md-6">
+                                <label for="zipCode" class="form-label">Zip / Postal Code <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="zipCode" name="zipCode" placeholder="10001" required>
+                                <div class="invalid-feedback">Please enter a valid 5 or 6 digit postal code.</div>
+                            </div>
+                        </div>
+
+                        <h6 class="fw-bold text-dark mb-3 border-bottom pb-2">2. Payment Method</h6>
+
+                        <!-- Payment Options Radio -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-12 col-md-4">
+                                <label class="payment-option-card w-100">
+                                    <input type="radio" name="paymentMethod" value="Cash on Delivery" checked>
+                                    <div>
+                                        <div class="fw-bold">💵 Cash on Delivery</div>
+                                        <div class="text-muted small">Pay when order arrives</div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <label class="payment-option-card w-100">
+                                    <input type="radio" name="paymentMethod" value="Credit/Debit Card">
+                                    <div>
+                                        <div class="fw-bold">💳 Credit / Debit Card</div>
+                                        <div class="text-muted small">Visa, Mastercard, Amex</div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <label class="payment-option-card w-100">
+                                    <input type="radio" name="paymentMethod" value="UPI / Net Banking">
+                                    <div>
+                                        <div class="fw-bold">📱 UPI / Net Banking</div>
+                                        <div class="text-muted small">Instant secure payment</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div id="paymentFeedback" class="text-danger small mb-3" style="display: none;">
+                            Please select a payment method.
+                        </div>
+
+                        <!-- Modal Actions -->
+                        <div class="d-flex justify-content-end gap-2 pt-3 border-top">
+                            <button type="button" class="btn btn-outline-secondary px-4 py-2" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary px-4 py-2 fw-bold" style="border-radius: 8px;">
+                                Confirm & Place Order
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 9. ORDER SUCCESS / RECEIPT MODAL ================= -->
+    <div class="modal fade" id="orderSuccessModal" tabindex="-1" aria-labelledby="orderSuccessModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 16px;">
+                <div class="modal-body p-4">
+                    <div id="receiptDetails">
+                        <!-- Populated dynamically via Template Literals upon checkout -->
+                    </div>
+                    <button type="button" class="btn btn-primary w-100 py-2 fw-bold" data-bs-dismiss="modal" style="border-radius: 8px;">
+                        Continue Shopping
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 10. FLOATING TOAST NOTIFICATION CONTAINER ================= -->
+    <div id="toastContainer" class="toast-container-custom"></div>
+
+    <!-- ================= 11. FOOTER & ES6 CONCEPTS SUMMARY ================= -->
+    <footer class="site-footer">
+        <div class="container text-center">
+            <p class="mb-1 fw-bold text-dark">Mini E-Commerce Application &bull; ES6+ Edition</p>
+            <p class="mb-0 text-muted small">
+                JavaScript Concepts Implemented:
+                <span class="badge bg-light text-dark border">const / let</span>
+                <span class="badge bg-light text-dark border">ES6 Classes</span>
+                <span class="badge bg-light text-dark border">Getters & Methods</span>
+                <span class="badge bg-light text-dark border">Arrow Functions (=>)</span>
+                <span class="badge bg-light text-dark border">Template Literals (`...`)</span>
+                <span class="badge bg-light text-dark border">Object Destructuring</span>
+                <span class="badge bg-light text-dark border">Spread Operator (...)</span>
+                <span class="badge bg-light text-dark border">new Set()</span>
+                <span class="badge bg-light text-dark border">Default Parameters</span>
+                <span class="badge bg-light text-dark border">localStorage</span>
+                <span class="badge bg-light text-dark border">JSON</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Modern ES6+ Application Logic -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>

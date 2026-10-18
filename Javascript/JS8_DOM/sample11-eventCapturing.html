@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Capturing Demo</title>
+
+    <style>
+        #parent {
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            background: red;
+            display: flex;
+            align-items: center;
+        }
+
+        #main {
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            background: blue;
+            display: flex;
+            align-items: center;
+        }
+
+        #child {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background: green;
+            display: flex;
+            align-items: center;
+        }
+
+        #grandChild {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            background: blueviolet;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="parent">
+        <div id="main">
+            <div id="child">
+                <div id="grandChild">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var parent = document.getElementById("parent");
+        var main = document.getElementById("main");
+        var child = document.getElementById("child");
+        var grandChild = document.getElementById("grandChild");
+
+
+        parent.addEventListener("click", function () {
+            console.log("Parent Called !!!!");
+        }, true);
+
+
+        main.addEventListener("click", function () {
+            console.log("Main Called !!!!");
+        }, true);
+
+
+        child.addEventListener("click", function () {
+            console.log("Child Called !!!!");
+        }, true);
+
+
+        grandChild.addEventListener("click", function () {
+            console.log("GrandChild Called !!!!");
+        }, true);
+
+    </script>
+
+</body>
+
+</html>

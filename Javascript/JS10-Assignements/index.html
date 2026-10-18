@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini E-Commerce Application 🛍 | Project Hub</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            color: #1e293b;
+            padding: 40px 15px;
+        }
+
+        .hub-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 28px;
+        }
+
+        .hub-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .badge-pill {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin: 3px 2px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" style="max-width: 960px;">
+        <!-- Header -->
+        <div class="text-center mb-5">
+            <span class="badge bg-primary px-3 py-2 rounded-pill mb-2">Final Challenge &bull; Mini Project</span>
+            <h1 class="fw-extrabold display-5 fw-bold text-dark mb-2">Mini E-Commerce Application 🛍</h1>
+            <p class="text-muted lead fs-6">Choose between the <strong>Pure ES5</strong> version or the <strong>Modern ES6+</strong> version below.</p>
+        </div>
+
+        <!-- Version Cards Grid -->
+        <div class="row g-4 justify-content-center">
+
+            <!-- ES5 Version Card -->
+            <div class="col-12 col-md-6">
+                <div class="hub-card">
+                    <div class="card-icon bg-primary-subtle text-primary">
+                        📜
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h3 class="fw-bold mb-0">ES5 Edition</h3>
+                        <span class="badge bg-secondary">Pure ES5</span>
+                    </div>
+                    <p class="text-muted small mb-3">
+                        Strictly adheres to ES5 conventions without any ES6 features. Uses <code>var</code>, standard functions, string concatenation, and ES5 polyfill for <code>.find()</code>.
+                    </p>
+
+                    <div class="mb-4">
+                        <span class="badge-pill bg-light text-dark border">var only</span>
+                        <span class="badge-pill bg-light text-dark border">function()</span>
+                        <span class="badge-pill bg-light text-dark border">String concat (+)</span>
+                        <span class="badge-pill bg-light text-dark border">map()</span>
+                        <span class="badge-pill bg-light text-dark border">filter()</span>
+                        <span class="badge-pill bg-light text-dark border">reduce()</span>
+                        <span class="badge-pill bg-light text-dark border">find()</span>
+                        <span class="badge-pill bg-light text-dark border">localStorage</span>
+                        <span class="badge-pill bg-light text-dark border">JSON</span>
+                        <span class="badge-pill bg-light text-dark border">Validation</span>
+                    </div>
+
+                    <div class="mt-auto d-grid gap-2">
+                        <a href="ES5/index.html" class="btn btn-primary py-2 fw-semibold" style="border-radius: 10px;">
+                            Launch ES5 Application ➔
+                        </a>
+                        <a href="ES5/ecommerce.html" class="btn btn-outline-secondary py-2 small" style="border-radius: 10px;">
+                            Open Standalone ES5 Single-File
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ES6 Version Card -->
+            <div class="col-12 col-md-6">
+                <div class="hub-card">
+                    <div class="card-icon bg-success-subtle text-success">
+                        ⚡
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h3 class="fw-bold mb-0">ES6+ Edition</h3>
+                        <span class="badge bg-success">Modern JS</span>
+                    </div>
+                    <p class="text-muted small mb-3">
+                        Built with modern ES6+ standards featuring classes, constructors, getters, arrow functions, template literals, destructuring, spread operators, and dynamic Sets.
+                    </p>
+
+                    <div class="mb-4">
+                        <span class="badge-pill bg-success-subtle text-success border border-success-subtle">const / let</span>
+                        <span class="badge-pill bg-success-subtle text-success border border-success-subtle">ES6 Classes</span>
+                        <span class="badge-pill bg-success-subtle text-success border border-success-subtle">Arrow Functions (=>)</span>
+                        <span class="badge-pill bg-success-subtle text-success border border-success-subtle">Template Literals</span>
+                        <span class="badge-pill bg-success-subtle text-success border border-success-subtle">Destructuring</span>
+                        <span class="badge-pill bg-success-subtle text-success border border-success-subtle">Spread (...)</span>
+                        <span class="badge-pill bg-success-subtle text-success border border-success-subtle">new Set()</span>
+                        <span class="badge-pill bg-success-subtle text-success border border-success-subtle">Default Params</span>
+                    </div>
+
+                    <div class="mt-auto d-grid gap-2">
+                        <a href="ES6/index.html" class="btn btn-success py-2 fw-semibold" style="border-radius: 10px;">
+                            Launch ES6 Application ➔
+                        </a>
+                        <a href="ES6/ecommerce.html" class="btn btn-outline-secondary py-2 small" style="border-radius: 10px;">
+                            Open Standalone ES6 Single-File
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-5 text-muted small">
+            <span>Folders: <code>/ES5/</code> and <code>/ES6/</code> &bull; Both editions include search, filtering, cart management, coupons, and checkout validation.</span>
+        </div>
+    </div>
+
+</body>
+
+</html>

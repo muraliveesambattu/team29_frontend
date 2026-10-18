@@ -1,0 +1,580 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Task Manager</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #f4f7fb !important;
+        }
+
+        .app-container {
+            max-width: 1100px;
+        }
+
+        .app-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+        }
+
+        .main-card {
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .card-header-custom {
+            background: linear-gradient(135deg, #0d6efd, #4f8dfd);
+            padding: 20px 25px;
+        }
+
+        .table thead th {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 15px;
+        }
+
+        .table tbody td {
+            padding: 16px 15px;
+        }
+
+        .table tbody tr {
+            transition: all 0.2s ease;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .task-title {
+            font-weight: 600;
+            color: #212529;
+        }
+
+        .task-id {
+            color: #6c757d;
+            font-weight: 600;
+        }
+
+        .action-btn {
+            min-width: 85px;
+        }
+
+        .form-card {
+            border: none;
+            border-radius: 16px;
+            background: white;
+        }
+
+        .form-title {
+            font-weight: 700;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .form-control,
+        .form-select {
+            border-radius: 10px;
+            padding: 11px 14px;
+            border: 1px solid #dee2e6;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+        }
+
+        .main-action-btn {
+            min-width: 120px;
+            border-radius: 10px;
+            padding: 10px 18px;
+            font-weight: 600;
+        }
+
+        #updateButton {
+            display: none;
+        }
+
+        .empty-space {
+            height: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .app-title {
+                font-size: 2rem;
+            }
+
+            .table {
+                min-width: 700px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container app-container py-5">
+
+        <!-- ================= HEADER ================= -->
+
+        <div class="text-center mb-5">
+
+            <div class="mb-3">
+                <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill">
+                    📋 Task Management
+                </span>
+            </div>
+
+            <h1 class="app-title text-dark">
+                Task Manager
+            </h1>
+
+            <p class="subtitle text-muted mb-0">
+                Create, manage and track your tasks efficiently
+            </p>
+
+        </div>
+
+
+        <!-- ================= TASK LIST ================= -->
+
+        <div class="card main-card shadow-sm mb-4">
+
+            <!-- Card Header -->
+
+            <div class="card-header-custom text-white">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <h5 class="mb-1 fw-bold">
+                            My Tasks
+                        </h5>
+
+                        <small class="opacity-75">
+                            Manage your current tasks
+                        </small>
+                    </div>
+
+                    <span class="badge bg-white text-primary px-3 py-2">
+                        Task List
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Table -->
+
+            <div class="card-body p-0">
+
+                <div class="table-responsive">
+                    <select name="" id="filterTodos" onchange="handleTodos()">
+                        <option value="Yet to Start">Yet to Start</option>
+                        <option value="pending">Pending</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                    <table class="table table-hover align-middle mb-0">
+
+                        <thead class="table-dark">
+
+                            <tr>
+                                <th>ID</th>
+                                <th>Task</th>
+                                <th>Status</th>
+                                <th class="text-center">Edit</th>
+                                <th class="text-center">Delete</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="taskTableBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= TASK FORM ================= -->
+
+        <div class="card form-card shadow-sm">
+
+            <div class="card-body p-4 p-md-5">
+
+                <div class="d-flex align-items-center mb-4">
+
+                    <div class="bg-primary text-white rounded-3 p-2 me-3">
+                        ➕
+                    </div>
+
+                    <div>
+                        <h5 class="form-title mb-1">
+                            Add / Update Task
+                        </h5>
+
+                        <small class="text-muted">
+                            Enter the task details below
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <form>
+
+                    <div class="row g-4">
+
+                        <!-- Task ID -->
+
+                        <div class="col-md-4">
+
+                            <label for="id" class="form-label">
+                                Task ID
+                            </label>
+
+                            <input type="text" id="id" class="form-control" placeholder="Enter task ID">
+
+                        </div>
+
+
+                        <!-- Task Name -->
+
+                        <div class="col-md-4">
+
+                            <label for="title" class="form-label">
+                                Task Name
+                            </label>
+
+                            <input type="text" id="title" class="form-control" placeholder="Enter task name">
+
+                        </div>
+
+
+                        <!-- Status -->
+
+                        <div class="col-md-4">
+
+                            <label for="taskStatus" class="form-label">
+                                Status
+                            </label>
+
+                            <select id="taskStatus" class="form-select">
+
+                                <option value="Yet to Star">
+                                    Yet to Start
+                                </option>
+
+                                <option value="pending">
+                                    Pending
+                                </option>
+
+                                <option value="completed">
+                                    Completed
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Buttons -->
+
+                    <div class="d-flex justify-content-end gap-2 mt-4">
+
+                        <button onclick="handleUpdte()" type="button" id="updateButton"
+                            class="btn btn-success main-action-btn">
+
+                            ✓ Update Task
+
+                        </button>
+
+
+                        <button onclick="handleAdd()" type="button" id="addButton"
+                            class="btn btn-primary main-action-btn">
+
+                            + Add Task
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const tasks = [
+            {
+                id: 1,
+                title: "Learn HTML",
+                status: "completed"
+            },
+            {
+                id: 2,
+                title: "Learn CSS",
+                status: "completed"
+            },
+            {
+                id: 3,
+                title: "Learn JavaScript",
+                status: "pending"
+            },
+            {
+                id: 4,
+                title: "Learn Bootstrap",
+                status: "completed"
+            },
+            {
+                id: 5,
+                title: "Learn DOM Manipulation",
+                status: "pending"
+            },
+            {
+                id: 6,
+                title: "Build a Todo Application",
+                status: "Yet to Start"
+            },
+            {
+                id: 7,
+                title: "Learn JavaScript Events",
+                status: "pending"
+            },
+            {
+                id: 8,
+                title: "Learn JavaScript Arrays",
+                status: "completed"
+            },
+            {
+                id: 9,
+                title: "Learn JavaScript Objects",
+                status: "Yet to Start"
+            },
+            {
+                id: 10,
+                title: "Build a Task Manager",
+                status: "Yet to Start"
+            }
+        ];
+
+
+        var editIndex
+
+        function displayData(tasks) {
+
+            const tbody = document.querySelector("#taskTableBody");
+
+            tbody.innerHTML = ""
+
+            tasks.forEach(function (task, index) {
+
+                let statusBadge = "";
+
+                if (task.status === "completed") {
+
+                    statusBadge =
+                        `<span class="badge bg-success-subtle text-success px-3 py-2">
+                            ✓ Completed
+                        </span>`;
+
+                }
+
+                else if (task.status === "pending") {
+
+                    statusBadge =
+                        `<span class="badge bg-warning-subtle text-warning-emphasis px-3 py-2">
+                            ⏳ Pending
+                        </span>`;
+
+                }
+
+                else {
+
+                    statusBadge =
+                        `<span class="badge bg-secondary-subtle text-secondary px-3 py-2">
+                            ○ Yet to Start
+                        </span>`;
+
+                }
+
+
+                const myTr = document.createElement("tr");
+
+
+                myTr.innerHTML = `
+
+                    <td class="task-id">
+                        #${task.id}
+                    </td>
+
+                    <td>
+                        <span class="task-title">
+                            ${task.title}
+                        </span>
+                    </td>
+
+                    <td>
+                        ${statusBadge}
+                    </td>
+
+                    <td class="text-center">
+
+                        <button
+                            class="btn btn-sm btn-outline-primary action-btn"
+                            onclick="handleEdit('${index}')">
+
+                            ✏️ Edit
+
+                        </button>
+
+                    </td>
+
+                    <td class="text-center">
+
+                        <button
+                            class="btn btn-sm btn-outline-danger action-btn"
+                            onclick="handleDelete('${index}')">
+
+                            🗑️ Delete
+
+                        </button>
+
+                    </td>
+
+                `;
+
+                tbody.appendChild(myTr)
+
+            });
+
+        }
+
+
+        displayData(tasks);
+
+
+        function handleDelete(index) {
+
+            tasks.splice(index, 1)
+
+            displayData();
+
+        }
+
+
+        function handleEdit(index) {
+
+            editIndex = index
+
+            document.getElementById("id").value =
+                tasks[index].id
+
+            document.getElementById("title").value =
+                tasks[index].title
+
+            document.getElementById("taskStatus").value =
+                tasks[index].status
+
+
+            document.querySelector("#addButton").style.display =
+                "none";
+
+            document.querySelector("#updateButton").style.display =
+                "block";
+
+        }
+
+
+        function handleUpdte() {
+
+            var task = {
+
+                id: document.getElementById("id").value,
+
+                title: document.getElementById("title").value,
+
+                status: document.getElementById("taskStatus").value
+
+            }
+
+            tasks[editIndex] = task;
+
+            displayData(tasks);
+
+            document.querySelector("form").reset();
+
+
+            document.querySelector("#addButton").style.display =
+                "block";
+
+            document.querySelector("#updateButton").style.display =
+                "none";
+
+        }
+
+
+        function handleAdd() {
+
+            var task = {
+
+                id: document.getElementById("id").value,
+
+                title: document.getElementById("title").value,
+
+                status: document.getElementById("taskStatus").value
+
+            }
+
+            tasks.push(task);
+
+            displayData();
+
+            document.querySelector("form").reset()
+
+        }
+
+        function handleTodos() {
+            var filetValue = document.getElementById("filterTodos").value;
+            var filteredTasks = tasks.filter(function (val){
+                return val.status == filetValue
+            })
+
+            console.log(filteredTasks);
+            displayData(filteredTasks)
+        }
+    </script>
+
+</body>
+
+</html>
+```

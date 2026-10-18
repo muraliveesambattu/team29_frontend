@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Synchronus 
+        // console.log("Welcome to Ajax 1");
+        // console.log("Welcome to Ajax 2");
+        // console.log("Welcome to Ajax 3");
+        // console.log("Welcome to Ajax 4");
+        // console.log("Welcome to Ajax 5");
+        // console.log("Welcome to Ajax 6");
+        // console.log("Welcome to Ajax 7");
+
+
+        var users = []
+        function showHelloWold(){
+            console.log("Welcome to Hello World !!");
+        }
+
+        function showHelloJavascript(){
+            setTimeout(function (){
+                 users = ["Ram","Ravi","Sam","Krishna"]
+            },10000)
+        }
+
+        function showReactJs(){
+            console.log("Welcome to ReactJS Training sessions");
+            users.forEach(function (val){
+                console.log(val);
+            })
+        }
+
+        showHelloWold();
+        showHelloJavascript();
+        showReactJs();
+    </script>
+</body>
+</html>

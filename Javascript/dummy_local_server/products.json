@@ -1,0 +1,266 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Headphones",
+      "description": "Comfortable wireless headphones with clear audio.",
+      "price": 1999,
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop",
+      "rating": 4.5,
+      "stock": 20
+    },
+    {
+      "id": 2,
+      "name": "Smart Watch",
+      "description": "A smart watch with fitness tracking features.",
+      "price": 2499,
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&auto=format&fit=crop",
+      "rating": 4.2,
+      "stock": 15
+    },
+    {
+      "id": 3,
+      "name": "Cotton T-Shirt",
+      "description": "A comfortable everyday cotton T-shirt.",
+      "price": 599,
+      "category": "Fashion",
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&auto=format&fit=crop",
+      "rating": 4,
+      "stock": 30
+    },
+    {
+      "id": 4,
+      "name": "Travel Backpack",
+      "description": "A durable backpack for travel and everyday use.",
+      "price": 1299,
+      "category": "Accessories",
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&auto=format&fit=crop",
+      "rating": 4.3,
+      "stock": 12
+    },
+    {
+      "id": 5,
+      "name": "Running Shoes",
+      "description": "Lightweight shoes designed for daily running.",
+      "price": 1799,
+      "category": "Footwear",
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop",
+      "rating": 4.4,
+      "stock": 10
+    },
+    {
+      "id": 6,
+      "name": "Coffee Mug",
+      "description": "A reusable ceramic coffee mug.",
+      "price": 299,
+      "category": "Home",
+      "image": "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500&auto=format&fit=crop",
+      "rating": 4.1,
+      "stock": 25
+    },
+    {
+      "id": 7,
+      "name": "Bluetooth Speaker",
+      "description": "Portable speaker with wireless connectivity and rich sound.",
+      "price": 1499,
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500&auto=format&fit=crop",
+      "rating": 4.4,
+      "stock": 18
+    },
+    {
+      "id": 8,
+      "name": "Mechanical Keyboard",
+      "description": "A mechanical keyboard designed for gaming and typing.",
+      "price": 2999,
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&auto=format&fit=crop",
+      "rating": 4.6,
+      "stock": 12
+    },
+    {
+      "id": 9,
+      "name": "Wireless Mouse",
+      "description": "An ergonomic wireless mouse for everyday computer use.",
+      "price": 799,
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=500&auto=format&fit=crop",
+      "rating": 4.2,
+      "stock": 25
+    },
+    {
+      "id": 10,
+      "name": "Power Bank",
+      "description": "A portable power bank for charging mobile devices.",
+      "price": 1199,
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500&auto=format&fit=crop",
+      "rating": 4.3,
+      "stock": 20
+    },
+    {
+      "id": 11,
+      "name": "Denim Jeans",
+      "description": "Classic denim jeans suitable for casual wear.",
+      "price": 1299,
+      "category": "Fashion",
+      "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=500&auto=format&fit=crop",
+      "rating": 4.1,
+      "stock": 22
+    },
+    {
+      "id": 12,
+      "name": "Casual Hoodie",
+      "description": "A soft and comfortable hoodie for everyday use.",
+      "price": 999,
+      "category": "Fashion",
+      "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&auto=format&fit=crop",
+      "rating": 4.3,
+      "stock": 16
+    },
+    {
+      "id": 13,
+      "name": "Sunglasses",
+      "description": "Stylish sunglasses with UV protection.",
+      "price": 699,
+      "category": "Accessories",
+      "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&auto=format&fit=crop",
+      "rating": 4,
+      "stock": 28
+    },
+    {
+      "id": 14,
+      "name": "Leather Wallet",
+      "description": "A compact wallet with multiple card slots.",
+      "price": 499,
+      "category": "Accessories",
+      "image": "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500&auto=format&fit=crop",
+      "rating": 4.2,
+      "stock": 24
+    },
+    {
+      "id": 15,
+      "name": "Travel Water Bottle",
+      "description": "A reusable stainless steel water bottle.",
+      "price": 399,
+      "category": "Accessories",
+      "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500&auto=format&fit=crop",
+      "rating": 4.4,
+      "stock": 35
+    },
+    {
+      "id": 16,
+      "name": "Running Shorts",
+      "description": "Lightweight and breathable shorts for workouts.",
+      "price": 499,
+      "category": "Fashion",
+      "image": "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500&auto=format&fit=crop",
+      "rating": 4.1,
+      "stock": 20
+    },
+    {
+      "id": 17,
+      "name": "Yoga Mat",
+      "description": "A non-slip yoga mat for exercise and stretching.",
+      "price": 899,
+      "category": "Sports",
+      "image": "https://images.unsplash.com/photo-1592432678016-e910b452f9a2?w=500&auto=format&fit=crop",
+      "rating": 4.5,
+      "stock": 14
+    },
+    {
+      "id": 19,
+      "name": "Table Lamp",
+      "description": "A modern table lamp for bedrooms and study desks.",
+      "price": 1099,
+      "category": "Home",
+      "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500&auto=format&fit=crop",
+      "rating": 4.2,
+      "stock": 11
+    },
+    {
+      "id": 20,
+      "name": "Ceramic Dinner Set",
+      "description": "A ceramic dinner set for everyday family meals.",
+      "price": 1599,
+      "category": "Home",
+      "image": "https://images.unsplash.com/photo-1603199506016-b9a594b593c0?w=500&auto=format&fit=crop",
+      "rating": 4.4,
+      "stock": 9
+    },
+    {
+      "id": 22,
+      "name": "Desk Organizer",
+      "description": "A desk organizer for stationery and office supplies.",
+      "price": 349,
+      "category": "Home",
+      "image": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=500&auto=format&fit=crop",
+      "rating": 4,
+      "stock": 26
+    },
+    {
+      "id": 23,
+      "name": "Classic Wristwatch",
+      "description": "A classic wristwatch with a minimalist design.",
+      "price": 1899,
+      "category": "Accessories",
+      "image": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=500&auto=format&fit=crop",
+      "rating": 4.4,
+      "stock": 8
+    },
+    {
+      "id": 24,
+      "name": "Laptop Stand",
+      "description": "An adjustable stand for comfortable laptop use.",
+      "price": 999,
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500&auto=format&fit=crop",
+      "rating": 4.5,
+      "stock": 19
+    },
+    {
+      "id": 25,
+      "name": "Badminton Racket",
+      "description": "A lightweight badminton racket for recreational play.",
+      "price": 899,
+      "category": "Sports",
+      "image": "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=500&auto=format&fit=crop",
+      "rating": 4.2,
+      "stock": 15
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "name": "Wireless Headphones",
+      "description": "Comfortable wireless headphones with clear audio.",
+      "price": 1999,
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop",
+      "rating": 4.5,
+      "stock": 20
+    },
+    {
+      "id": 2,
+      "name": "Smart Watch",
+      "description": "A smart watch with fitness tracking features.",
+      "price": 2499,
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&auto=format&fit=crop",
+      "rating": 4.2,
+      "stock": 15
+    },
+    {
+      "id": 3,
+      "name": "Cotton T-Shirt",
+      "description": "A comfortable everyday cotton T-shirt.",
+      "price": 599,
+      "category": "Fashion",
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&auto=format&fit=crop",
+      "rating": 4,
+      "stock": 30
+    }
+  ]
+}

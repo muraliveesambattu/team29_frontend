@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .success {
+            color: green;
+            background: white;
+        }
+
+        .warning {
+            color: yellow;
+            background: white;
+        }
+
+        .danger {
+            color: red;
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="changeSuccess()">Apply Success</button>
+    <button onclick="changeWarning()">Apply Warning</button>
+    <button onclick="changeDanger()">Apply Danger</button>
+    <h2 id="myHeading" onclick="changeContent()">Welcome to HTML Attributes</h2>
+    <script>
+        function changeSuccess() {
+            document.querySelector("h2").setAttribute("class", "success")
+        }
+        function changeWarning() {
+            document.querySelector("h2").setAttribute("class", "warning")
+        }
+        function changeDanger() {
+            document.querySelector("h2").setAttribute("class", "danger")
+
+        }
+    </script>
+</body>
+
+</html>

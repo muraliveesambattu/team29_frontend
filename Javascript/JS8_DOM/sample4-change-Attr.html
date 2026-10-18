@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .success {
+            color: green;
+            background: white;
+        }
+
+        .danger {
+            color: red;
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="changeAttribute()">Change Color</button>
+    <button onclick="removeAll()">Remove All</button>
+    <h2 class="success">Welcome to HTML Attributes</h2>
+
+    <script>
+        function changeAttribute() {
+            var attr = document.querySelector("h2").getAttribute("class");
+            if (attr == "success") {
+                document.querySelector("h2").setAttribute("class", "danger")
+            } else {
+                document.querySelector("h2").setAttribute("class", "success")
+            }
+        }
+
+        function removeAll(){
+            document.querySelector("h2").removeAttribute("class")
+        }
+    </script>
+</body>
+
+</html>

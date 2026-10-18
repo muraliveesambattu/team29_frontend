@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form Input Types</title>
+</head>
+
+<body>
+
+    <h1>HTML Form</h1>
+
+    <form>
+
+        <!-- Text -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <br><br>
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <br><br>
+
+        <!-- Password -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br><br>
+
+        <!-- Number -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age">
+        <br><br>
+
+        <!-- Telephone -->
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone">
+        <br><br>
+
+        <!-- URL -->
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website">
+        <br><br>
+
+        <!-- Search -->
+        <label for="search">Search:</label>
+        <input type="search" id="search" name="search">
+        <br><br>
+
+
+        <!-- Date -->
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date">
+        <br><br>
+
+        <!-- Time -->
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time">
+        <br><br>
+
+        <!-- Date and Time -->
+        <label for="datetime">Date & Time:</label>
+        <input type="datetime-local" id="datetime" name="datetime">
+        <br><br>
+
+        <!-- Month -->
+        <label for="month">Month:</label>
+        <input type="month" id="month" name="month">
+        <br><br>
+
+        <!-- Week -->
+        <label for="week">Week:</label>
+        <input type="week" id="week" name="week">
+        <br><br>
+
+
+        <!-- Radio Buttons -->
+        <p>Gender:</p>
+
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+
+        <br><br>
+
+
+        <!-- Checkbox -->
+        <p>Skills:</p>
+
+        <input type="checkbox" id="html" name="skills" value="html">
+        <label for="html">HTML</label>
+
+        <input type="checkbox" id="css" name="skills" value="css">
+        <label for="css">CSS</label>
+
+        <input type="checkbox" id="javascript" name="skills" value="javascript">
+        <label for="javascript">JavaScript</label>
+
+        <br><br>
+
+
+        <!-- Color -->
+        <label for="color">Choose a color:</label>
+        <input type="color" id="color" name="color">
+        <br><br>
+
+
+        <!-- Range -->
+        <label for="range">Experience Level:</label>
+        <input type="range" id="range" name="experience" min="0" max="10">
+        <br><br>
+
+
+        <!-- File -->
+        <label for="file">Upload Resume:</label>
+        <input type="file" id="file" name="resume">
+        <br><br>
+
+
+        <!-- Hidden -->
+        <input type="hidden" name="userId" value="12345">
+
+
+        <!-- Select -->
+        <label for="country">Country:</label>
+
+        <select id="country" name="country">
+            <option value="">Select Country</option>
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+            <option value="canada">Canada</option>
+        </select>
+
+        <br><br>
+
+
+        <!-- Textarea -->
+        <label for="message">Message:</label>
+        <br>
+
+        <textarea
+            id="message"
+            name="message"
+            rows="5"
+            cols="40"
+            placeholder="Enter your message">
+        </textarea>
+
+        <br><br>
+
+
+        <!-- Datalist -->
+        <label for="browser">Choose Browser:</label>
+
+        <input list="browsers" id="browser" name="browser">
+
+        <datalist id="browsers">
+            <option value="Chrome">
+            <option value="Firefox">
+            <option value="Safari">
+            <option value="Edge">
+        </datalist>
+
+        <br><br>
+
+
+        <!-- Buttons -->
+
+        <input type="submit" value="Submit">
+
+        <input type="reset" value="Reset">
+
+        <button type="button">
+            Normal Button
+        </button>
+
+    </form>
+ <script>
+    document.addEventListener("DOMContentLoaded",function (){
+        alert("Document is completely Loded ... So you can start using it")
+    })
+ </script>
+</body>
+
+</html>

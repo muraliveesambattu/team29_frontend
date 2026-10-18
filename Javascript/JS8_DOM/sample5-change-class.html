@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .success {
+            color: green;
+            background: white;
+        }
+
+        .danger {
+            color: red;
+            background: white;
+        }
+        .info{
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="addClassNames()">Add Class</button>
+    <button onclick="removeInfoClass()">Remove Info</button>
+    <button onclick="addAndRemove()">Toggle Info</button>
+    <h2>Welcome to DOM- Add CSS Classes</h2>
+    <script>
+        function addClassNames(){
+            document.querySelector("h2").classList.add("success");
+            document.querySelector("h2").classList.add("info");
+            
+        }
+
+        function removeInfoClass(){
+            document.querySelector("h2").classList.remove("info");
+        }
+        function addAndRemove(){
+                        document.querySelector("h2").classList.toggle("info");
+
+        }
+    </script>
+</body>
+</html>

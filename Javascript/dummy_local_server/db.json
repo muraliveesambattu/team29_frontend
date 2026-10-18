@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "username": "johndoe",
+      "phone": "9876543210",
+      "website": "johndoe.com"
+    },
+    {
+      "id": 2,
+      "name": "Priya Sharma",
+      "email": "priya.sharma@example.com",
+      "username": "priyasharma",
+      "phone": "9876543211",
+      "website": "priyasharma.com"
+    },
+    {
+      "id": 3,
+      "name": "Rahul Reddy",
+      "email": "rahul.kumar@example.com",
+      "username": "rahulkumar",
+      "phone": "9876543333",
+      "website": "rahulkumar.com"
+    },
+    {
+      "id": 4,
+      "name": "Ananya Kumar",
+      "email": "ananya.reddy@example.com",
+      "username": "ananyareddy",
+      "phone": "9876543213",
+      "website": "ananyareddy.com"
+    },
+    {
+      "id": "6",
+      "name": "Murali V",
+      "email": "vmurali100@gmail.com",
+      "username": "vmurali",
+      "phone": "09663856625",
+      "website": "aaaa"
+    },
+    {
+      "id": "7",
+      "name": "Murali V",
+      "email": "vmurali100@gmail.com",
+      "username": "ram",
+      "phone": "09663856625",
+      "website": "ram.com"
+    }
+  ]
+}

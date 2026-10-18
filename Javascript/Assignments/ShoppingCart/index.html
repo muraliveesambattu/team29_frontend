@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Sticky Footer Navbar Template for Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/sticky-footer-navbar.css"
+        rel="stylesheet">
+    <style>
+        li {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        img {
+            width: 100%;
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <!-- Fixed navbar -->
+        <!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Fixed navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+         
+          </ul>
+          <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav> -->
+
+        <!-- Bootstrap Icons CDN -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">Fixed navbar</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">
+                            Home <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                </ul>
+
+                <form class="form-inline mt-2 mt-md-0 mr-3">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" id="searchInput" aria-label="Search" onkeyup="searchProducts()">
+
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                        Search
+                    </button>
+                </form>
+
+                <!-- Shopping Cart -->
+                <a href="#" class="nav-link text-white position-relative mr-3" aria-label="Shopping cart, 3 items"
+                    onclick="navigateToCart()">
+                    <i class="bi bi-cart3" style="font-size: 24px;"></i>
+
+                    <span id="cartCount" class="badge badge-danger" style="position: absolute; top: 0; right: 0;
+                         font-size: 10px;">
+                        0
+                    </span>
+                </a>
+
+            </div>
+        </nav>
+
+    </header>
+
+    <main role="main" class="container">
+
+        <ul id="products">
+
+        </ul>
+
+        <script>
+            function addToCart() {
+                alert("Product added to cart!");
+            }
+        </script>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Place sticky footer content here.</span>
+        </div>
+    </footer>
+
+    <script>
+        var allProducts = [];
+        var cartItems = [];
+        function getAllProducts() {
+            fetch("http://localhost:3000/products").then(function (response) {
+                return response.json()
+            }).then(function (data) {
+                allProducts = data;
+                 displayProducts(data)
+                  })
+        }
+
+        getAllProducts();
+
+        function addToCart(index) {
+            cartItems.push(allProducts[index]);
+            document.getElementById("cartCount").innerHTML = cartItems.length;
+            // localStorage.setItem("cartItems", JSON.stringify(cartItems));
+            fetch("http://localhost:3000/cart",{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify(allProducts[index])
+            }).then(function (){
+                console.log("Products Added Successfully !!!");
+            })
+        }
+
+        function navigateToCart() {
+            window.location.href = "cart.html"
+        }
+        function displayCartCount(){
+            fetch("http://localhost:3000/cart").then(function (response){
+                return response.json()
+            }).then(function (data){
+                document.getElementById("cartCount").innerHTML = data.length
+            })
+        }
+        displayCartCount();
+
+        function searchProducts(){
+            var userInput = document.getElementById("searchInput").value
+                        console.log("searchProducts happening !!",userInput);
+            var filteredProducts = allProducts.filter(function (product){
+                return product.name.toLocaleLowerCase().indexOf(userInput.toLocaleLowerCase()) > -1
+            })
+             displayProducts(filteredProducts)
+
+        }
+        function displayProducts(data){
+                 document.querySelector("#products").innerHTML = ""
+data.forEach(function (product, i) {
+                    var myLi = document.createElement("li");
+                    myLi.innerHTML = `
+                     <div class="card" style="width: 18rem;">
+
+            <img src="${product.image}" class="card-img-top" alt="Product Image">
+
+            <div class="card-body">
+
+                <h5 class="card-title">${product.name}</h5>
+
+                <p class="card-text">
+                    ${product.description}
+                </p>
+
+                <h5 class="text-success">₹ ${product.price}</h5>
+
+                <button class="btn btn-primary" onclick="addToCart(${i})">
+                    <i class="bi bi-cart-plus"></i>
+                    Add to Cart
+                </button>
+
+            </div>
+        </div>
+                    
+                    `
+                    document.querySelector("#products").appendChild(myLi)
+                })
+          
+        }
+    </script>
+
+</body>
+
+</html>

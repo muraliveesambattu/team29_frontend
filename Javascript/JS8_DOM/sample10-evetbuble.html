@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent {
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            background: red;
+            display: flex;
+            align-items: center;
+        }
+
+        #main {
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            background: blue;
+            display: flex;
+            align-items: center;
+        }
+
+        #child {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background: green;
+            display: flex;
+            align-items: center;
+        }
+
+        #grandChild {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            background: blueviolet;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent" onclick="handleParent()">
+        <div id="main" onclick="handleMain()">
+            <div id="child" onclick="handleChild()">
+                <div id="grandChild" onclick="handleGrandChild()">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleGrandChild() {
+            console.log("handleGrandChild Called !!!!");
+        }
+        function handleChild() {
+            console.log("handleChild Called !!!!");
+        }
+
+        function handleMain() {
+            console.log("handleMain Called !!!!");
+
+        }
+        function handleParent() {
+            console.log("handleParent Called !!!!");
+        }
+    </script>
+</body>
+
+</html>
