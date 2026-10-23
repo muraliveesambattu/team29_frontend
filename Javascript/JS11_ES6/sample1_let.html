@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var myNumber = 10;
+        let number2 = 20;
+        const number3 = 30;
+
+        myNumber = 1000;
+        number2 = 990;
+        // number3 = 888;
+
+        // console.log(myNumber);
+        // console.log(number2);
+        // console.log(number3);
+
+        function displayNumbers (){
+
+            for(let i=0;i<10;i++){
+                console.log("Number "+i);
+            }
+
+            console.log("I Value Outstide For Loop : "+ i);
+        }
+
+        displayNumbers();
+        // let const Introduced in ES6
+
+        // 1. Variable declared with Const Can not be re assigned 
+        // 2. Variable declared with var and Let  Can be re assigned
+        // 3. Var is functional Level Scope , But let is Block Level Scope
+        // 4. Var can be hosted . Let & Const cannot hosited 
+    </script>
+</body>
+</html>

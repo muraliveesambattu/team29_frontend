@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. Synchronous - One activity , then another Activity 
+        // 2. Asynchronous - Parallel Activities 
+        var friends = []
+        function getUsersFromServer(displayUsers) {
+            setTimeout(function () {
+                friends = ["Kiran", "Kumar", "Murali", "Krishna"]
+                displayUsers()
+            }, 2000)
+        };// Getting the Users From Server - It works Asynchronously 
+
+        function displayUsers() {
+            if (friends.length >= 1) {
+                friends.forEach(function (friend) {
+                    console.log(friend);
+                })
+            } else {
+                console.log("No Users Available !!!");
+            }
+
+        };
+
+
+        getUsersFromServer(displayUsers); // 2sec 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var users = []
+        function getUsersFromServer() {
+            return new Promise(function (resolve, reject) {
+                users = ["Kiran", "Kumar", "Murali", "Krishna"]
+                // resolve(users);
+                reject()
+            })
+        }
+
+        function calculate() {
+            var a = 10;
+            var b = 20;
+            var total = a + b
+        }
+        async function handleDataFromServer() {
+
+            try {
+                let data = await getUsersFromServer();
+                // let total = await calculate()
+                console.log(data);
+            } catch (error) {
+                console.log("There some error");
+            }
+            console.log("Hello .. i am after error !!!");
+
+        }
+
+        handleDataFromServer()
+        // getUsersFromServer().then(function (data) {
+        //     console.log(data);
+        // }).catch(function () {
+        //     console.log("Something Went Wrong");
+        // })
+
+    </script>
+</body>
+
+</html>

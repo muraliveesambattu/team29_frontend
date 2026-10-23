@@ -83,7 +83,8 @@
                 </ul>
 
                 <form class="form-inline mt-2 mt-md-0 mr-3">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" id="searchInput" aria-label="Search" onkeyup="searchProducts()">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" id="searchInput"
+                        aria-label="Search" onkeyup="searchProducts()">
 
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
                         Search
@@ -134,8 +135,8 @@
                 return response.json()
             }).then(function (data) {
                 allProducts = data;
-                 displayProducts(data)
-                  })
+                displayProducts(data)
+            })
         }
 
         getAllProducts();
@@ -144,13 +145,13 @@
             cartItems.push(allProducts[index]);
             document.getElementById("cartCount").innerHTML = cartItems.length;
             // localStorage.setItem("cartItems", JSON.stringify(cartItems));
-            fetch("http://localhost:3000/cart",{
-                method:"POST",
-                headers:{
-                    "Content-Type":"application/json"
+            fetch("http://localhost:3000/cart", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
                 },
-                body:JSON.stringify(allProducts[index])
-            }).then(function (){
+                body: JSON.stringify(allProducts[index])
+            }).then(function () {
                 console.log("Products Added Successfully !!!");
             })
         }
@@ -158,29 +159,29 @@
         function navigateToCart() {
             window.location.href = "cart.html"
         }
-        function displayCartCount(){
-            fetch("http://localhost:3000/cart").then(function (response){
+        function displayCartCount() {
+            fetch("http://localhost:3000/cart").then(function (response) {
                 return response.json()
-            }).then(function (data){
+            }).then(function (data) {
                 document.getElementById("cartCount").innerHTML = data.length
             })
         }
         displayCartCount();
 
-        function searchProducts(){
+        function searchProducts() {
             var userInput = document.getElementById("searchInput").value
-                        console.log("searchProducts happening !!",userInput);
-            var filteredProducts = allProducts.filter(function (product){
+            console.log("searchProducts happening !!", userInput);
+            var filteredProducts = allProducts.filter(function (product) {
                 return product.name.toLocaleLowerCase().indexOf(userInput.toLocaleLowerCase()) > -1
             })
-             displayProducts(filteredProducts)
+            displayProducts(filteredProducts)
 
         }
-        function displayProducts(data){
-                 document.querySelector("#products").innerHTML = ""
-data.forEach(function (product, i) {
-                    var myLi = document.createElement("li");
-                    myLi.innerHTML = `
+        function displayProducts(data) {
+            document.querySelector("#products").innerHTML = ""
+            data.forEach(function (product, i) {
+                var myLi = document.createElement("li");
+                myLi.innerHTML = `
                      <div class="card" style="width: 18rem;">
 
             <img src="${product.image}" class="card-img-top" alt="Product Image">
@@ -204,9 +205,9 @@ data.forEach(function (product, i) {
         </div>
                     
                     `
-                    document.querySelector("#products").appendChild(myLi)
-                })
-          
+                document.querySelector("#products").appendChild(myLi)
+            })
+
         }
     </script>
 
